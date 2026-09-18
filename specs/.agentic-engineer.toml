@@ -1,0 +1,4 @@
+apiVersion = "agentic-engineer/v1"
+name = "webapp-authentication-stores-1"
+createdAt = "2026-09-18T01:53:35Z"
+idea = "i want a webapp with authentication that stores user's todo items in a database"
