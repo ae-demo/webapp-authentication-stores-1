@@ -1,0 +1,50 @@
+{
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "statement": "A user can sign in securely so their todo list is private and persists across sessions",
+      "stories": [1],
+      "criteria": [
+        { "id": "AC-001-a", "must": "An unauthenticated visitor is prompted to sign in before seeing any todo list", "method": "e2e" },
+        { "id": "AC-001-b", "must": "After signing in, a user sees only their own todo items, never another user's", "method": "e2e" },
+        { "id": "AC-001-c", "must": "A signed-in user's todo list is still present after signing out and signing back in", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "statement": "A user can add a todo item with a title",
+      "stories": [2],
+      "criteria": [
+        { "id": "AC-002-a", "must": "Submitting a title creates a new todo item visible in the user's list", "method": "e2e" },
+        { "id": "AC-002-b", "must": "Attempting to add a todo item with an empty title is rejected", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "statement": "A user can view their list of todo items",
+      "stories": [3],
+      "criteria": [
+        { "id": "AC-003-a", "must": "The todo list screen displays every todo item belonging to the signed-in user", "method": "e2e" },
+        { "id": "AC-003-b", "must": "Each listed todo item shows its title and its done/not-done status", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "statement": "A user can mark a todo item as done or not-done",
+      "stories": [4],
+      "criteria": [
+        { "id": "AC-004-a", "must": "Marking an open todo item done updates its displayed status to done", "method": "e2e" },
+        { "id": "AC-004-b", "must": "Marking a done todo item not-done updates its displayed status back to open", "method": "e2e" }
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "statement": "A user can delete a todo item",
+      "stories": [5],
+      "criteria": [
+        { "id": "AC-005-a", "must": "Deleting a todo item removes it from the user's list", "method": "e2e" },
+        { "id": "AC-005-b", "must": "A deleted todo item does not reappear after reloading the list", "method": "e2e" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "todo-api",
+  "type": "service",
+  "version": "0.1.0",
+  "language": "Ballerina",
+  "buildpack": "docker",
+  "appPath": "todo-api",
+  "entrypoint": "deployment/service",
+  "exposure": "intranet",
+  "dependencies": [
+    { "kind": "platform-resource", "name": "todo-db", "resourceType": "postgres-cnpg" },
+    { "kind": "platform-resource", "name": "user-auth", "resourceType": "thunder-app" }
+  ],
+  "description": "Owns the todo-item resource: create, list, update (done/not-done) and delete a todo item, always scoped to the signed-in caller's own userId. Persists items in its own Postgres database. Does not manage user accounts or identity — that is Thunder's job — and exposes no admin or cross-user views.",
+  "stories": [2, 3, 4, 5],
+  "skillsPinned": ["openapi-conventions", "ballerina", "thunder-authentication", "api-management"]
+}

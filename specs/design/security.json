@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "permissions": [
+    {
+      "resource": "todo-items",
+      "component": "todo-api",
+      "description": "A user's own todo items",
+      "actions": [
+        { "handle": "read", "description": "The caller's own todo items" },
+        { "handle": "manage", "description": "Create, update and delete the caller's own todo items" }
+      ]
+    }
+  ],
+  "groups": [],
+  "roles": [
+    {
+      "name": "User",
+      "description": "Signs in and manages their own private todo list.",
+      "stories": [1, 2, 3, 4, 5],
+      "grants": ["todo-items:read", "todo-items:manage"],
+      "assignTo": ["Users"]
+    }
+  ],
+  "testUsers": [
+    { "username": "test-user", "roles": ["User"] }
+  ]
+}
